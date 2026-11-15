@@ -2,9 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace QaAutomationTests.Models;
 
-/// <summary>
 /// Represents a post resource returned by the JSONPlaceholder API.
-/// </summary>
 public class Post
 {
     [JsonPropertyName("userId")]

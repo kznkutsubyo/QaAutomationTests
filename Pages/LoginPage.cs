@@ -2,9 +2,8 @@ using Microsoft.Playwright;
 
 namespace QaAutomationTests.Pages;
 
-/// <summary>
+
 /// Page Object for the SauceDemo login page.
-/// </summary>
 public class LoginPage
 {
     public const string PageUrl = "https://www.saucedemo.com/";
@@ -22,17 +21,13 @@ public class LoginPage
     public ILocator LoginButton => _page.Locator("[data-test='login-button']");
     public ILocator ErrorMessage => _page.Locator("[data-test='error']");
 
-    /// <summary>
     /// Navigates to the login page.
-    /// </summary>
     public async Task OpenAsync()
     {
         await _page.GotoAsync(PageUrl);
     }
 
-    /// <summary>
     /// Fills in credentials and submits the login form.
-    /// </summary>
     public async Task LoginAsync(string username, string password)
     {
         await UsernameInput.FillAsync(username);
@@ -40,9 +35,7 @@ public class LoginPage
         await LoginButton.ClickAsync();
     }
 
-    /// <summary>
     /// Returns the displayed login error text.
-    /// </summary>
     public async Task<string> GetErrorMessageTextAsync()
     {
         return await ErrorMessage.InnerTextAsync();

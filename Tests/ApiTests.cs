@@ -4,9 +4,7 @@ using QaAutomationTests.Models;
 
 namespace QaAutomationTests.Tests;
 
-/// <summary>
 /// REST API functional tests against JSONPlaceholder endpoints.
-/// </summary>
 public class ApiTests
 {
     private const string EndpointUrl = "https://jsonplaceholder.typicode.com/posts/1";

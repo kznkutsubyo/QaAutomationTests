@@ -1,10 +1,7 @@
 using Microsoft.Playwright;
 
 namespace QaAutomationTests.Pages;
-
-/// <summary>
 /// Page Object for the SauceDemo products catalog page.
-/// </summary>
 public class ProductsPage
 {
     public const string PageUrl = "https://www.saucedemo.com/inventory.html";
@@ -20,9 +17,7 @@ public class ProductsPage
     public ILocator Title => _page.Locator("[data-test='title']");
     public ILocator InventoryList => _page.Locator("[data-test='inventory-list']");
 
-    /// <summary>
     /// Returns the page header text.
-    /// </summary>
     public async Task<string> GetTitleTextAsync()
     {
         return await Title.InnerTextAsync();

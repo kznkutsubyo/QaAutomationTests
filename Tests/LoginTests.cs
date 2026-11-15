@@ -4,9 +4,7 @@ using static Microsoft.Playwright.Assertions;
 
 namespace QaAutomationTests.Tests;
 
-/// <summary>
 /// UI functional tests for SauceDemo authentication flows.
-/// </summary>
 public class LoginTests : IAsyncLifetime
 {
     private IPlaywright _playwright = null!;
@@ -15,9 +13,7 @@ public class LoginTests : IAsyncLifetime
     private LoginPage _loginPage = null!;
     private ProductsPage _productsPage = null!;
 
-    /// <summary>
     /// Initializes an isolated browser instance and page objects before each test.
-    /// </summary>
     public async Task InitializeAsync()
     {
         _playwright = await Playwright.CreateAsync();
@@ -31,9 +27,7 @@ public class LoginTests : IAsyncLifetime
         _productsPage = new ProductsPage(_page);
     }
 
-    /// <summary>
     /// Closes the browser and disposes Playwright resources after each test.
-    /// </summary>
     public async Task DisposeAsync()
     {
         if (_browser is not null)
